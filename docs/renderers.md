@@ -6,7 +6,7 @@ The default set of renderers may be set globally, using the `DEFAULT_RENDERER_CL
 
     REST_FRAMEWORK = {
         'DEFAULT_RENDERER_CLASSES': (
-            'rest_framework_yaml.renderers.YAMLRenderer',
+            'drf_yaml.renderers.YAMLRenderer',
         )
     }
 
@@ -16,7 +16,7 @@ using the `APIView` class based views.
     from django.contrib.auth.models import User
     from rest_framework.response import Response
     from rest_framework.views import APIView
-    from rest_framework_yaml.renderers import YAMLRenderer
+    from drf_yaml.renderers import YAMLRenderer
 
     class UserCountView(APIView):
         """

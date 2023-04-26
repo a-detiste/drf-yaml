@@ -6,7 +6,7 @@ The default set of parsers may be set globally, using the `DEFAULT_PARSER_CLASSE
 
     REST_FRAMEWORK = {
         'DEFAULT_PARSER_CLASSES': (
-            'rest_framework_yaml.parsers.YAMLParser',
+            'drf_yaml.parsers.YAMLParser',
         )
     }
 
@@ -15,7 +15,7 @@ using the `APIView` class based views.
 
     from rest_framework.response import Response
     from rest_framework.views import APIView
-    from rest_framework_yaml.parsers import YAMLParser
+    from drf_yaml.parsers import YAMLParser
 
     class ExampleView(APIView):
         """

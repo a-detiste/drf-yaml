@@ -1,27 +1,27 @@
 # REST Framework YAML
 
-[![build-status-image]][github-action]
+![build-status-image]
 [![pypi-version]][pypi]
 
 **YAML support for Django REST Framework**
 
-Full documentation for the project is available at [http://jpadilla.github.io/django-rest-framework-yaml][docs].
+Full documentation for the project is available at [http://qu4tro.github.io/django-rest-framework-yaml][docs].
 
 ## Overview
 
-YAML support extracted as a third party package directly from the official Django REST Framework implementation. It's built using the [PyYAML][pyyaml] package.
+YAML support for the Django REST Framework, forked from [https://github.com/jpadilla/django-rest-framework-yaml][original].
 
 ## Requirements
 
-* Python (2.7, 3.3, 3.4)
-* Django (1.6, 1.7)
+* Python (3.8, 3.9, 3.10, 3.11)
+* Django (3.2, 4.*)
 
 ## Installation
 
 Install using `pip`...
 
 ```bash
-$ pip install djangorestframework-yaml
+$ pip install drf-yaml
 ```
 
 ## Example
@@ -29,10 +29,10 @@ $ pip install djangorestframework-yaml
 ```python
 REST_FRAMEWORK = {
     'DEFAULT_PARSER_CLASSES': (
-        'rest_framework_yaml.parsers.YAMLParser',
+        'drf_yaml.parsers.YAMLParser',
     ),
     'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework_yaml.renderers.YAMLRenderer',
+        'drf_yaml.renderers.YAMLRenderer',
     ),
 }
 ```
@@ -41,8 +41,8 @@ You can also set the renderer and parser used for an individual view, or viewset
 
 ```python
 from rest_framework import routers, serializers, viewsets
-from rest_framework_yaml.parsers import YAMLParser
-from rest_framework_yaml.renderers import YAMLRenderer
+from drf_yaml.parsers import YAMLParser
+from drf_yaml.renderers import YAMLRenderer
 
 # Serializers define the API representation.
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -72,15 +72,11 @@ class UserViewSet(viewsets.ModelViewSet):
 
 ## Documentation & Support
 
-Full documentation for the project is available at [http://jpadilla.github.io/django-rest-framework-yaml][docs].
-
-You may also want to follow the [author][jpadilla] on Twitter.
+Full documentation for the project is available at [http://qu4tro.github.io/django-rest-framework-yaml][docs].
 
 
-[build-status-image]: https://github.com/jpadilla/django-rest-framework-yaml/workflows/CI/badge.svg
-[github-action]: https://github.com/jpadilla/django-rest-framework-yaml/actions?query=workflow%3ACI
-[pypi-version]: https://img.shields.io/pypi/v/djangorestframework-yaml.svg
-[pypi]: https://pypi.python.org/pypi/djangorestframework-yaml
-[pyyaml]: http://pyyaml.org/
-[docs]: http://jpadilla.github.io/django-rest-framework-yaml
-[jpadilla]: https://twitter.com/jpadilla_
+[build-status-image]: https://img.shields.io/github/checks-status/Qu4tro/django-rest-framework-yaml/main
+[pypi-version]: https://img.shields.io/pypi/v/drf-yaml.svg
+[pypi]: https://pypi.python.org/pypi/drf-yaml
+[docs]: http://qu4tro.github.io/django-rest-framework-yaml
+[original]: https://github.com/jpadilla/django-rest-framework-yaml

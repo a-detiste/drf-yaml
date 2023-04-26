@@ -1,19 +1,27 @@
-name: Publish
-
-on:
-  release:
-    types: [created]
+name: Make docs
 
 env:
   PYTHON_VERSION: '3.11'
   POETRY_VERSION: '1.4.2'
 
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
 jobs:
-  deploy:
+  docs:
+    name: Build docs & publish them
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check out repository
+      - name: Check out repository default branch
         uses: actions/checkout@v3
+
+      - name: Check out repository default branch
+        run: git fetch origin gh-pages
 
       - name: Set up python
         uses: actions/setup-python@v4
@@ -34,16 +42,11 @@ jobs:
           virtualenvs-create: true
           virtualenvs-in-project: true
 
-      - name: Validate poetry config
-        run: poetry check
-
       - name: Install dependencies
-        run: poetry install
+        run: poetry install --only docs
 
       - name: Build
-        run: poetry build
-
-      - name: Publish
-        run: poetry publish
-        env:
-          POETRY_PYPI_TOKEN_PYPI: ${{ secrets.POETRY_PYPI_TOKEN_PYPI }}
+        run: |
+          git config --global user.name "Github Action"
+          git config --global user.email "dontemailthis@users.noreply.github.com"
+          poetry run mike deploy --update-aliases develop --push

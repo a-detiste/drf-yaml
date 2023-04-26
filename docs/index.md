@@ -1,9 +1,7 @@
 <div class="badges">
-  <a href="https://github.com/jpadilla/django-rest-framework-yaml/actions?query=workflow%3ACI">
-    <img src="https://github.com/jpadilla/django-rest-framework-yaml/workflows/CI/badge.svg">
-  </a>
-  <a href="https://pypi.python.org/pypi/djangorestframework-yaml">
-    <img src="https://img.shields.io/pypi/v/djangorestframework-yaml.svg">
+    <img src="https://img.shields.io/github/checks-status/Qu4tro/django-rest-framework-yaml/main">
+  <a href="https://pypi.python.org/pypi/drf-yaml">
+    <img src="https://img.shields.io/pypi/v/drf-yaml.svg">
   </a>
 </div>
 
@@ -17,19 +15,19 @@ YAML support for Django REST Framework
 
 ## Overview
 
-YAML support extracted as a third party package directly from the official Django REST Framework implementation. It's built using the [PyYAML][pyyaml] package.
+YAML support for the Django REST Framework, forked from [https://github.com/jpadilla/django-rest-framework-yaml][original].
 
 ## Requirements
 
-* Python (2.7, 3.3, 3.4)
-* Django (1.6, 1.7)
+* Python (3.8, 3.9, 3.10, 3.11)
+* Django (3.2, 4.*)
 
 ## Installation
 
 Install using `pip`...
 
 ```bash
-$ pip install djangorestframework-yaml
+$ pip install drf-yaml
 ```
 
 ## Example
@@ -37,10 +35,10 @@ $ pip install djangorestframework-yaml
 ```python
 REST_FRAMEWORK = {
     'DEFAULT_PARSER_CLASSES': (
-        'rest_framework_yaml.parsers.YAMLParser',
+        'drf_yaml.parsers.YAMLParser',
     ),
     'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework_yaml.renderers.YAMLRenderer',
+        'drf_yaml.renderers.YAMLRenderer',
     ),
 }
 ```
@@ -50,8 +48,8 @@ You can also set the renderer and parser used for an individual view, or viewset
 ```python
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework_yaml.parsers import YAMLParser
-from rest_framework_yaml.renderers import YAMLRenderer
+from drf_yaml.parsers import YAMLParser
+from drf_yaml.renderers import YAMLRenderer
 
 class ExampleView(APIView):
     """
@@ -80,13 +78,13 @@ class ExampleView(APIView):
 Install testing requirements.
 
 ```bash
-$ pip install -r requirements.txt
+$ poetry install
 ```
 
-Run with runtests.
+Run with pytest.
 
 ```bash
-$ ./runtests.py
+$ poetry run pytest
 ```
 
 You can also use the excellent [tox](http://tox.readthedocs.org/en/latest/) testing tool to run the tests against all supported versions of Python and Django. Install tox globally, and then simply run:
@@ -100,21 +98,20 @@ $ tox
 To build the documentation, you'll need to install `mkdocs`.
 
 ```bash
-$ pip install mkdocs
+$ poetry install --only docs
 ```
 
 To preview the documentation:
 
 ```bash
-$ mkdocs serve
+$ poetry run mkdocs serve
 Running at: http://127.0.0.1:8000/
 ```
 
 To build the documentation:
 
-```bash
-$ mkdocs build
+```
+$ poetry run mkdocs build
 ```
 
-
-[pyyaml]: http://pyyaml.org/
+[original]: https://github.com/jpadilla/django-rest-framework-yaml
