@@ -1,6 +1,6 @@
 site_name: drf-yaml
 site_description: YAML support for Django REST Framework
-repo_url: https://github.com/Qu4tro/django-rest-framework-yaml
+repo_url: https://github.com/Qu4tro/drf-yaml
 site_dir: html
 theme:
   name: material

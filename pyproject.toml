@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "drf-yaml"
-version = "3.0.0"
+version = "3.0.1"
 description = "YAML support for Django REST Framework"
 authors = [
     "José Padilla <hello@jpadilla.com>",
@@ -8,7 +8,7 @@ authors = [
 ]
 license = "BSD"
 readme = "README.md"
-homepage = "https://github.com/Qu4tro/django-rest-framework-yaml"
+homepage = "https://github.com/Qu4tro/drf-yaml"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Web Environment",

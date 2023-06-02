@@ -1,5 +1,5 @@
 <div class="badges">
-    <img src="https://img.shields.io/github/checks-status/Qu4tro/django-rest-framework-yaml/main">
+    <img src="https://img.shields.io/github/checks-status/Qu4tro/drf-yaml/main">
   <a href="https://pypi.python.org/pypi/drf-yaml">
     <img src="https://img.shields.io/pypi/v/drf-yaml.svg">
   </a>

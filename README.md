@@ -5,7 +5,7 @@
 
 **YAML support for Django REST Framework**
 
-Full documentation for the project is available at [http://qu4tro.github.io/django-rest-framework-yaml][docs].
+Full documentation for the project is available at [http://qu4tro.github.io/drf-yaml][docs].
 
 ## Overview
 
@@ -72,11 +72,11 @@ class UserViewSet(viewsets.ModelViewSet):
 
 ## Documentation & Support
 
-Full documentation for the project is available at [http://qu4tro.github.io/django-rest-framework-yaml][docs].
+Full documentation for the project is available at [http://qu4tro.github.io/drf-yaml][docs].
 
 
-[build-status-image]: https://img.shields.io/github/checks-status/Qu4tro/django-rest-framework-yaml/main
+[build-status-image]: https://img.shields.io/github/checks-status/Qu4tro/drf-yaml/main
 [pypi-version]: https://img.shields.io/pypi/v/drf-yaml.svg
 [pypi]: https://pypi.python.org/pypi/drf-yaml
-[docs]: http://qu4tro.github.io/django-rest-framework-yaml
+[docs]: http://qu4tro.github.io/drf-yaml
 [original]: https://github.com/jpadilla/django-rest-framework-yaml
