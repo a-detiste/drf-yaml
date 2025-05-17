@@ -1,6 +1,11 @@
 from pathlib import Path
 
-import toml
+try:
+    # 'tomllib' is in the standard Library since Python 3.11
+    import tomllib as toml
+except ImportError:
+    import toml
+
 from django.test import TestCase
 
 import drf_yaml
